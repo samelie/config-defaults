@@ -1,0 +1,36 @@
+{
+  "name": "@adddog/config-defaults",
+  "version": "0.0.0",
+  "type": "module",
+  "private": false,
+  "homepage": "https://github.com/samelie/config-defaults#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/samelie/config-defaults.git"
+  },
+  "bugs": {
+    "url": "https://github.com/samelie/config-defaults/issues"
+  },
+  "scripts": {
+    "types": "tsc -p tsconfig.typecheck.json",
+    "release": "bumpp --yes --no-push --release patch",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix ."
+  },
+  "exports": {
+    "./*": "./*"
+  },
+  "devDependencies": {
+    "eslint": "^9.37.0",
+    "typescript": "^5.9.3"
+  },
+  "engines": {
+    "node": ">= 22",
+    "pnpm": ">= 10",
+    "npm": ">= 11"
+  },
+    "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
+}
