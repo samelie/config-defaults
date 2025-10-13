@@ -1,4 +1,4 @@
-# @rad/config
+# @adddog/config-defaults
 
 ## Scripts
 
