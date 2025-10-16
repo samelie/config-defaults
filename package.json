@@ -12,7 +12,7 @@
     "url": "https://github.com/samelie/config-defaults/issues"
   },
   "scripts": {
-    "build": "rad-build",
+    "build": "unbuild",
     "test": "vitest run",
     "types": "tsc -p tsconfig.typecheck.json",
     "release": "bumpp --yes --no-push --no-tag --release patch",
