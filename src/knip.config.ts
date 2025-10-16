@@ -1,4 +1,10 @@
-export default {
+import type { KnipConfig } from "knip";
+import { isArray, mergeWith } from "lodash-es";
+
+/**
+ * Default Knip configuration with best practices for monorepo setups
+ */
+const defaultKnipConfig = {
     // The schema URL for JSON validation in editors
     $schema: "https://unpkg.com/knip@5/schema.json",
 
@@ -160,4 +166,40 @@ export default {
         //     ignoreDependencies: ["some-dep"]
         // }
     },
-};
+} satisfies KnipConfig;
+
+/**
+ * Creates a Knip configuration by deep merging the default configuration
+ * with user-supplied overrides. Arrays are concatenated instead of replaced.
+ *
+ * @param overrides - Partial Knip configuration to merge with defaults
+ * @returns Complete Knip configuration with overrides applied
+ *
+ * @example
+ * ```ts
+ * import { defineKnipConfig } from "@adddog/config-defaults/src/knip.config";
+ *
+ * export default defineKnipConfig({
+ *   entry: ["src/main.ts", "src/cli.ts"],
+ *   ignore: ["**\/*.test.ts"],
+ *   rules: {
+ *     classMembers: "error"
+ *   }
+ * });
+ * ```
+ */
+export function defineKnipConfig(overrides: Partial<KnipConfig> = {}): KnipConfig {
+    return mergeWith({}, defaultKnipConfig, overrides, (objValue, srcValue) => {
+        // If both values are arrays, concatenate them
+        if (isArray(objValue) && isArray(srcValue)) {
+            return objValue.concat(srcValue);
+        }
+        // Otherwise use default merge behavior
+        return undefined;
+    });
+}
+
+/**
+ * Export the default configuration for direct use
+ */
+export default defaultKnipConfig;
