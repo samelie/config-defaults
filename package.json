@@ -1,6 +1,6 @@
 {
   "name": "@adddog/config-defaults",
-  "version": "0.0.10",
+  "version": "0.0.5",
   "type": "module",
   "private": false,
   "homepage": "https://github.com/samelie/config-defaults#readme",
