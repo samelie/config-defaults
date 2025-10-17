@@ -1,6 +1,6 @@
 {
   "name": "@adddog/config-defaults",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "type": "module",
   "private": false,
   "homepage": "https://github.com/samelie/config-defaults#readme",
@@ -11,11 +11,15 @@
   "bugs": {
     "url": "https://github.com/samelie/config-defaults/issues"
   },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "unbuild",
     "test": "vitest run",
     "types": "tsc -p tsconfig.typecheck.json",
     "release": "bumpp --yes --no-push --no-tag --release patch",
+    "knip": "knip",
     "lint": "eslint .",
     "lint:fix": "eslint --fix ."
   },
@@ -43,31 +47,34 @@
         "types": "./dist/vite.config.d.ts",
         "default": "./dist/vite.config.mjs"
       }
+    },
+    "./vitest.config": {
+      "import": {
+        "types": "./dist/vitest.config.d.ts",
+        "default": "./dist/vitest.config.mjs"
+      }
+    },
+    "./vitest.config.js": {
+      "import": {
+        "types": "./dist/vitest.config.d.ts",
+        "default": "./dist/vitest.config.mjs"
+      }
     }
   },
   "devDependencies": {
     "@adddog/build-configs": "workspace:*",
     "@adddog/eslint": "workspace:*",
-    "@playwright/test": "^1.56.0",
-    "@rad/config": "workspace:*",
-    "@testing-library/jest-dom": "^6.9.1",
-    "@testing-library/user-event": "^14.6.1",
     "@types/lodash-es": "^4.17.12",
     "@types/node": "^24.8.0",
-    "@vitest/browser": "4.0.0-beta.17",
     "@vitest/browser-playwright": "4.0.0-beta.17",
-    "@vitest/coverage-v8": "^3.2.4",
     "@vitest/ui": "^3.2.4",
     "bumpp": "^10.3.1",
     "eslint": "^9.37.0",
-    "globals": "^16.4.0",
-    "happy-dom": "^19.0.2",
     "knip": "^5.65.0",
     "package-json-type": "^1.0.3",
     "typescript": "^5.9.3",
     "unbuild": "^3.6.1",
     "vite": "^7.1.10",
-    "vite-plugin-node-polyfills": "^0.24.0",
     "vitest": "^4.0.0-beta.18"
   },
   "engines": {
