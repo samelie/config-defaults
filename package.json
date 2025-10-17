@@ -12,13 +12,17 @@
     "url": "https://github.com/samelie/config-defaults/issues"
   },
   "files": [
-    "dist"
+    "dist",
+    "README.md",
+    "LICENSE"
   ],
   "scripts": {
     "build": "unbuild",
     "test": "vitest run",
     "types": "tsc -p tsconfig.typecheck.json",
     "release": "bumpp --yes --no-push --no-tag --release patch",
+    "prepublishOnly": "pnpm run lint && pnpm run types && pnpm run build",
+    "prepack": "pnpm run prepublishOnly",
     "knip": "knip",
     "lint": "eslint .",
     "lint:fix": "eslint --fix ."

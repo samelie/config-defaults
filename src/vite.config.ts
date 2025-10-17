@@ -130,14 +130,22 @@ export default defineConfig({
          * CSS preprocessor options
          * Configuration for Sass, Less, Stylus, etc.
          */
-        // preprocessorOptions: {
-        //     scss: {
-        //         additionalData: `@import "@/styles/variables.scss";`,
-        //     },
-        //     less: {
-        //         math: 'parens-division',
-        //     },
-        // },
+        preprocessorOptions: {
+            scss: {
+                /**
+                 * Dart v2 will introduce a breaking change on the maths
+                 * This quiets the deprecation warnings for now. b/c blueprintjs of course :facepalm:
+                 * See for more details:
+                 * Docs - https://sass-lang.com/documentation/breaking-changes/slash-div
+                 * GH -   https://github.com/sass/sass/issues/3065
+                 */
+                quietDeps: true,
+                // additionalData: `@import "@/styles/variables.scss";`,
+            },
+            // less: {
+            //     math: 'parens-division',
+            // },
+        },
 
         /**
          * PostCSS configuration
@@ -189,9 +197,10 @@ export default defineConfig({
 
         /**
          * Target browsers for build output
+         * https://vite.dev/config/build-options.html#build-target
          * @default 'modules' (browsers that support ES modules)
          */
-        target: "modules",
+        target: "baseline-widely-available",
 
         /**
          * Minification options

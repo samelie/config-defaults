@@ -22,10 +22,10 @@
         ],
         "skipLibCheck": true,
         "moduleResolution": "bundler",
-        "allowImportingTsExtensions": true,
+        "allowImportingTsExtensions": false,
         "isolatedModules": true,
         "moduleDetection": "force",
-        "noEmit": true,
+        "noEmit": false,
         "strict": true,
         "noUnusedLocals": true,
         "noUnusedParameters": true,
@@ -38,13 +38,6 @@
                 "../packages/publish/src/*",
                 "../../packages/publish/src/*",
                 "../../../packages/publish/src/*"
-            ],
-            "@rad/config/*": [
-                "./packages/config/*",
-                "../config/*",
-                "../packages/config/*",
-                "../../packages/config/*",
-                "../../../packages/config/*"
             ],
             "@adddog/eslint": [
                 "./packages/eslint",
