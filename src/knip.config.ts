@@ -53,23 +53,23 @@ const defaultKnipConfig = {
     // Files excluded here won't be checked for unused imports or reported as unused
     ignore: [
         "**.eslintrc*",
-        "eslint.config.mjs",
         "**/.storybook/**",
         "**/*.stories.*",
         "**/dev-dist/**",
         "**/mocks/handlers.ts",
         "**/tailwind.config.ts",
         "**/vite-env.d.ts",
+        "**/examples/**",
+        "**/dist/**",
     ],
 
     // Binaries to ignore even if used but not provided by any dependency
     ignoreBinaries: [
-        "knip", // knip itself is often used in scripts
         // Example: "zip", "docker-compose", "pm2-.+"
     ],
 
     // Dependencies to ignore in the analysis
-    ignoreDependencies: ["tsx", "eslint", "typescript", "vitest"],
+    ignoreDependencies: [],
 
     // Class and enum members to ignore
     ignoreMembers: [

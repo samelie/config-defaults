@@ -12,6 +12,7 @@ export default makeUnbuildConfig({
     entries: [
         "src/knip.config",
         "src/vite.config",
+        "src/vitest.config",
     ],
     declaration: true,
     externals: [

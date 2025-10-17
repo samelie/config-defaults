@@ -1,6 +1,5 @@
 import process from "node:process";
 import { defineConfig } from "vite";
-import { nodePolyfills } from "vite-plugin-node-polyfills";
 
 /**
  * Shared Vite Configuration
@@ -17,35 +16,6 @@ export default defineConfig({
     // PLUGINS
     // ============================================================================
     plugins: [
-
-        /**
-         * Node.js Polyfills for Browser Environment
-         * Provides compatibility for Node.js built-in modules in the browser
-         * Only includes essential polyfills to keep bundle size minimal
-         */
-        nodePolyfills({
-            /**
-             * Modules to polyfill
-             * Only include what's necessary for your application
-             */
-            include: ["buffer", "process", "stream"],
-
-            /**
-             * Global variable polyfills
-             * Makes Buffer and process available globally
-             */
-            globals: {
-                Buffer: true,
-                global: false,
-                process: true,
-            },
-
-            /**
-             * Disable node: protocol imports
-             * Prevents polyfilling of 'node:*' style imports
-             */
-            protocolImports: false,
-        }),
     ],
 
     // ============================================================================
