@@ -31,6 +31,7 @@ const defaultKnipConfig = {
     // ]
     // IMPORTANT: Specify your application's entry points here for accurate unused code detection
     entry: [
+        "knip.config.ts",
         // Add custom entry files here if needed
         // Examples: "src/main.ts", "src/index.ts", "apps/*/src/main.ts"
     ],
@@ -40,6 +41,8 @@ const defaultKnipConfig = {
     // The "!" suffix indicates production mode patterns (patterns without "!" are for default mode)
     // IMPORTANT: Define all files that should be analyzed for unused code
     project: [
+        "knip.config.ts",
+        "eslint.config.mjs",
         // Add custom project files here if needed
         // Examples: "src/**/*.ts", "apps/**/*.ts", "!**/*.test.ts"
     ],
@@ -52,6 +55,8 @@ const defaultKnipConfig = {
     // Files and patterns to ignore from analysis
     // Files excluded here won't be checked for unused imports or reported as unused
     ignore: [
+        "**/knip.config.ts",
+        "**/eslint.config.mjs",
         "**.eslintrc*",
         "**/.storybook/**",
         "**/*.stories.*",
@@ -69,7 +74,10 @@ const defaultKnipConfig = {
     ],
 
     // Dependencies to ignore in the analysis
-    ignoreDependencies: [],
+    ignoreDependencies: [
+        "@adddog/eslint",
+        "@adddog/config-defaults",
+    ],
 
     // Class and enum members to ignore
     ignoreMembers: [

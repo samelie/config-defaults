@@ -13,6 +13,8 @@ export default makeUnbuildConfig({
         "src/knip.config",
         "src/vite.config",
         "src/vitest.config",
+        "src/browser/global-setup",
+        "src/browser/setup-browser",
     ],
     declaration: true,
     externals: [

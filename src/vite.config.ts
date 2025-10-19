@@ -288,7 +288,7 @@ export default defineConfig({
          * Server port
          * @default 5173
          */
-        port: 3000,
+        port: 5173,
 
         /**
          * Fail if port is already in use

@@ -1,9 +1,13 @@
 import type { ViteUserConfig } from "vitest/config";
+import { join } from "node:path";
 import process from "node:process";
+import { fileURLToPath } from "node:url";
 import { playwright } from "@vitest/browser-playwright";
+
 import { defineConfig, mergeConfig } from "vitest/config";
 import viteConfig from "./vite.config";
-// import { navigateTo, waitForElement } from "./test/browser-commands";
+
+const __dirname = fileURLToPath(new URL(".", import.meta.url));
 
 /**
  * Vitest Configuration
@@ -251,7 +255,7 @@ export default mergeConfig(
              * Global setup file - runs once before all tests (in Node.js)
              * Use for database setup, server initialization, etc.
              */
-            globalSetup: "./test/browser/global-setup.ts",
+            globalSetup: join(__dirname, "./browser/global-setup.mjs"),
 
             /**
              * Global teardown file - runs once after all tests (in Node.js)
@@ -267,7 +271,7 @@ export default mergeConfig(
              * Browser setup runs in browser context
              * Node setup runs in Node.js context
              */
-            setupFiles: ["./test/browser/setup.browser.ts"],
+            setupFiles: [join(__dirname, "./browser/setup-browser.mjs")],
 
             // ====================================================================
             // TEST EXECUTION CONTROL
