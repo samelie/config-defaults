@@ -76,6 +76,7 @@ const defaultKnipConfig = {
     // Dependencies to ignore in the analysis
     ignoreDependencies: [
         "@adddog/eslint",
+        "@adddog/build-configs",
         "@adddog/config-defaults",
     ],
 
