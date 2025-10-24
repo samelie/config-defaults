@@ -78,8 +78,8 @@
     "package-json-type": "^1.0.3",
     "typescript": "^5.9.3",
     "unbuild": "^3.6.1",
-    "vite": "^7.1.11",
-    "vitest": "^4.0.0-beta.18"
+    "vite": "^7.1.12",
+    "vitest": "^4.0.2"
   },
   "engines": {
     "node": ">= 22",
