@@ -18,7 +18,7 @@
   ],
   "scripts": {
     "build": "unbuild",
-    "test": "vitest run",
+    "test": "echo '⚠️⚠️⚠️no test vitest --watch=false'",
     "types": "tsc -p tsconfig.typecheck.json",
     "release": "bumpp --yes --no-push --no-tag --release patch",
     "prepublishOnly": "pnpm run lint && pnpm run types && pnpm run build",

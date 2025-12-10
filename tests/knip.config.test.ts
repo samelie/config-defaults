@@ -24,7 +24,7 @@ describe("defineKnipConfig", () => {
 
         // Default ignore patterns should still be present
         expect(config.ignore).toContain("**.eslintrc*");
-        expect(config.ignore).toContain("eslint.config.mjs");
+        expect(config.ignore).toContain("**/eslint.config.mjs");
 
         // Merged rules - new rule added
         expect(config.rules?.classMembers).toBe("error");
@@ -70,7 +70,8 @@ describe("defineKnipConfig", () => {
 
         // Arrays are concatenated by lodash merge
         expect(config.ignoreDependencies).toContain("custom-dep");
-        expect(config.ignoreDependencies).toContain("tsx");
-        expect(config.ignoreDependencies).toContain("eslint");
+        // Default ignoreDependencies should still be present
+        expect(config.ignoreDependencies).toContain("@adddog/eslint");
+        expect(config.ignoreDependencies).toContain("@adddog/build-configs");
     });
 });
