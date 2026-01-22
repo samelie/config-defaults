@@ -13,6 +13,7 @@ export default defineKnipConfig({
     ignore: [
         // All source files are unbuild entries - knip can't trace them
         "src/**",
+        "build.config.ts",
     ],
     ignoreDependencies: [
         // These are re-exported for consumers

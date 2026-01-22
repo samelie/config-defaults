@@ -66,20 +66,19 @@
     }
   },
   "devDependencies": {
-    "@adddog/build-configs": "workspace:*",
-    "@adddog/eslint": "workspace:*",
+    "@adddog/build-configs": "^0.0.5",
     "@types/lodash-es": "^4.17.12",
-    "@types/node": "^25.0.9",
+    "@types/node": "^25.0.10",
     "@vitest/browser-playwright": "4.0.0-beta.17",
-    "@vitest/ui": "^4.0.17",
+    "@vitest/ui": "^4.0.18",
     "bumpp": "^10.4.0",
     "eslint": "^9.39.2",
-    "knip": "^5.81.0",
+    "knip": "^5.82.1",
     "package-json-type": "^1.0.3",
     "typescript": "^5.9.3",
     "unbuild": "^3.6.1",
     "vite": "^7.3.1",
-    "vitest": "^4.0.17"
+    "vitest": "^4.0.18"
   },
   "engines": {
     "node": ">= 22",
@@ -92,6 +91,6 @@
   },
   "dependencies": {
     "@playwright/test": "^1.57.0",
-    "lodash-es": "^4.17.22"
+    "lodash-es": "^4.17.23"
   }
 }
