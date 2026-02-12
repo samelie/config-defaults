@@ -10,13 +10,13 @@ export default defineKnipConfig({
         "src/browser/setup-browser.ts",
     ],
     project: ["src/**/*.{ts,tsx}"],
+    // WHY: all source files are unbuild entries, knip can't trace them
     ignore: [
-        // All source files are unbuild entries - knip can't trace them
         "src/**",
         "build.config.ts",
     ],
+    // WHY: re-exported for downstream consumers, not directly used here
     ignoreDependencies: [
-        // These are re-exported for consumers
         "lodash-es",
         "@playwright/test",
         "@vitest/browser-playwright",
