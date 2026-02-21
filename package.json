@@ -25,7 +25,8 @@
     "prepack": "pnpm run prepublishOnly",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
-    "knip": "knip"
+    "knip": "knip",
+    "version:patch": "npm version patch --no-git-tag-version"
   },
   "exports": {
     "./knip.config": {
