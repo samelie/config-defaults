@@ -30,40 +30,22 @@
   },
   "exports": {
     "./knip.config": {
-      "import": {
-        "types": "./dist/knip.config.d.ts",
-        "default": "./dist/knip.config.mjs"
-      }
+      "import": "./src/knip.config.ts"
     },
     "./knip.config.js": {
-      "import": {
-        "types": "./dist/knip.config.d.ts",
-        "default": "./dist/knip.config.mjs"
-      }
+      "import": "./src/knip.config.ts"
     },
     "./vite.config": {
-      "import": {
-        "types": "./dist/vite.config.d.ts",
-        "default": "./dist/vite.config.mjs"
-      }
+      "import": "./src/vite.config.ts"
     },
     "./vite.config.js": {
-      "import": {
-        "types": "./dist/vite.config.d.ts",
-        "default": "./dist/vite.config.mjs"
-      }
+      "import": "./src/vite.config.ts"
     },
     "./vitest.config": {
-      "import": {
-        "types": "./dist/vitest.config.d.ts",
-        "default": "./dist/vitest.config.mjs"
-      }
+      "import": "./src/vitest.config.ts"
     },
     "./vitest.config.js": {
-      "import": {
-        "types": "./dist/vitest.config.d.ts",
-        "default": "./dist/vitest.config.mjs"
-      }
+      "import": "./src/vitest.config.ts"
     }
   },
   "devDependencies": {
@@ -89,7 +71,45 @@
   },
   "publishConfig": {
     "access": "public",
-    "registry": "https://registry.npmjs.org/"
+    "registry": "https://registry.npmjs.org/",
+    "exports": {
+      "./knip.config": {
+        "import": {
+          "types": "./dist/knip.config.d.ts",
+          "default": "./dist/knip.config.mjs"
+        }
+      },
+      "./knip.config.js": {
+        "import": {
+          "types": "./dist/knip.config.d.ts",
+          "default": "./dist/knip.config.mjs"
+        }
+      },
+      "./vite.config": {
+        "import": {
+          "types": "./dist/vite.config.d.ts",
+          "default": "./dist/vite.config.mjs"
+        }
+      },
+      "./vite.config.js": {
+        "import": {
+          "types": "./dist/vite.config.d.ts",
+          "default": "./dist/vite.config.mjs"
+        }
+      },
+      "./vitest.config": {
+        "import": {
+          "types": "./dist/vitest.config.d.ts",
+          "default": "./dist/vitest.config.mjs"
+        }
+      },
+      "./vitest.config.js": {
+        "import": {
+          "types": "./dist/vitest.config.d.ts",
+          "default": "./dist/vitest.config.mjs"
+        }
+      }
+    }
   },
   "dependencies": {
     "@playwright/test": "^1.58.2",
