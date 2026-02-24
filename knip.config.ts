@@ -3,6 +3,6 @@
 import { defineKnipConfig } from "@adddog/monorepo-consistency";
 
 export default defineKnipConfig({
-    entry: ["src/main.ts","src/main.tsx","src/index.ts","src/index.tsx"],
+    entry: ["src/main.ts", "src/main.tsx", "src/index.ts", "src/index.tsx"],
     project: ["src/**/*.{ts,tsx}"],
 });
