@@ -5,7 +5,7 @@ import { fileURLToPath } from "node:url";
 import { playwright } from "@vitest/browser-playwright";
 
 import { defineConfig, mergeConfig } from "vitest/config";
-import viteConfig from "./vite.config.ts";
+import viteConfig from "./vite.config";
 
 const __dirname = fileURLToPath(new URL(".", import.meta.url));
 
