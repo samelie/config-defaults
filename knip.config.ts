@@ -7,9 +7,23 @@ export default defineKnipConfig({
     project: ["src/**/*.{ts,tsx}"],
 }, {
     "ignoreDependencies": [
-        "@adddog/monorepo-consistency"
+        "@adddog/monorepo-consistency",
+        "@playwright/test",
+        "@adddog/build-configs"
     ],
     "ignoreBinaries": [
         "knip"
+    ],
+    "entry": [
+        "src/knip.config.ts",
+        "src/vite.config.ts",
+        "src/vitest.config.ts"
+    ],
+    "project": [
+        "src/**/*.{ts,tsx}"
+    ],
+    "ignore": [
+        "src/browser/global-setup.ts",
+        "src/browser/setup-browser.ts"
     ]
 });
