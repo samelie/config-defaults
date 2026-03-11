@@ -201,7 +201,7 @@ export function defineKnipConfig(overrides: Partial<KnipConfig> = {}): KnipConfi
     return mergeWith({}, defaultKnipConfig, overrides, (objValue, srcValue) => {
         // If both values are arrays, concatenate them
         if (isArray(objValue) && isArray(srcValue)) {
-            return objValue.concat(srcValue);
+            return [...objValue, ...srcValue];
         }
         // Otherwise use default merge behavior
         return undefined;
