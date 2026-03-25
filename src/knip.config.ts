@@ -118,8 +118,6 @@ const defaultKnipConfig = {
         exports: "error", // Report exports not used in other files
         types: "error", // Report unused exported types, interfaces, etc.
         enumMembers: "error", // Report unused enum members
-        classMembers: "off", // Report unused class members (disabled by default)
-
         // Namespace-related rules (disabled by default)
         nsExports: "off", // Report exports in used namespaces
         nsTypes: "off", // Report types in used namespaces

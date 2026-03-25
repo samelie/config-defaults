@@ -57,7 +57,7 @@
     "@vitest/ui": "^4.1.1",
     "bumpp": "^11.0.1",
     "eslint": "^10.1.0",
-    "knip": "^6.0.4",
+    "knip": "^6.0.5",
     "package-json-type": "^1.1.2",
     "typescript": "^6.0.2",
     "unbuild": "^3.6.1",
