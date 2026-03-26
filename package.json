@@ -21,12 +21,12 @@
     "test": "echo '⚠️⚠️⚠️no test vitest --watch=false'",
     "types": "tsc -p tsconfig.typecheck.json",
     "release": "bumpp --yes --no-push --no-tag --release patch",
-    "prepublishOnly": "pnpm run types && pnpm run build",
     "prepack": "pnpm run prepublishOnly",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "knip": "knip",
-    "version:patch": "npm version patch --no-git-tag-version"
+    "version:patch": "npm version patch --no-git-tag-version",
+    "dev": "tsx src/index.ts"
   },
   "exports": {
     "./knip.config": {
