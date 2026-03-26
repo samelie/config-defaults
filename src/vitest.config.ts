@@ -5,7 +5,7 @@ import { fileURLToPath } from "node:url";
 import { playwright } from "@vitest/browser-playwright";
 
 import { defineConfig, mergeConfig } from "vitest/config";
-import viteConfig from "./vite.config";
+import viteConfig from "./vite.config.ts";
 
 const __dirname = fileURLToPath(new URL(".", import.meta.url));
 
@@ -255,7 +255,7 @@ export default mergeConfig(
              * Global setup file - runs once before all tests (in Node.js)
              * Use for database setup, server initialization, etc.
              */
-            globalSetup: join(__dirname, "./browser/global-setup.mjs"),
+            globalSetup: join(__dirname, "./browser/global-setup.ts"),
 
             /**
              * Global teardown file - runs once after all tests (in Node.js)
@@ -271,7 +271,7 @@ export default mergeConfig(
              * Browser setup runs in browser context
              * Node setup runs in Node.js context
              */
-            setupFiles: [join(__dirname, "./browser/setup-browser.mjs")],
+            setupFiles: [join(__dirname, "./browser/setup-browser.ts")],
 
             // ====================================================================
             // TEST EXECUTION CONTROL
