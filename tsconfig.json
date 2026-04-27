@@ -1,6 +1,5 @@
 {
     "compilerOptions": {
-        "ignoreDeprecations": "6.0",
         "resolveJsonModule": true,
         "strictNullChecks": true,
         "esModuleInterop": true,
@@ -19,10 +18,10 @@
         ],
         "skipLibCheck": true,
         "moduleResolution": "bundler",
-        "allowImportingTsExtensions": true,
+        "allowImportingTsExtensions": false,
         "isolatedModules": true,
         "moduleDetection": "force",
-        "noEmit": true,
+        "noEmit": false,
         "strict": true,
         "noUnusedLocals": true,
         "noUnusedParameters": true,
