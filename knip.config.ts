@@ -5,6 +5,7 @@ import { defineKnipConfig } from "@adddog/monorepo-consistency";
 export default defineKnipConfig({
     project: ["src/**/*.{ts,tsx}"],
 }, {
+    ignoreBinaries: ["tsx"],
     ignoreDependencies: [
         "@adddog/monorepo-consistency",
         "@playwright/test",
