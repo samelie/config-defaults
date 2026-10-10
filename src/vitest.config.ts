@@ -1,11 +1,10 @@
-import type { ViteUserConfig } from "vitest/config";
 import { join } from "node:path";
 import process from "node:process";
 import { fileURLToPath } from "node:url";
-import { playwright } from "@vitest/browser-playwright";
+import viteConfig from "@adddog/config-defaults/vite.config";
 
+import { playwright } from "@vitest/browser-playwright";
 import { defineConfig, mergeConfig } from "vitest/config";
-import viteConfig from "./vite.config.js";
 
 const __dirname = fileURLToPath(new URL(".", import.meta.url));
 
@@ -19,9 +18,11 @@ const __dirname = fileURLToPath(new URL(".", import.meta.url));
  * @see https://vitest.dev/config/
  */
 export default mergeConfig(
-    viteConfig as ViteUserConfig,
+    viteConfig,
     defineConfig({
         test: {
+            fileParallelism: true,
+            isolate: true,
             // ====================================================================
             // BROWSER TESTING CONFIGURATION
             // ====================================================================
@@ -58,14 +59,12 @@ export default mergeConfig(
                  * Prevents state leakage between test files
                  * @default true
                  */
-                isolate: true,
 
                 /**
                  * Run browser test files in parallel
                  * Set to false to run sequentially (useful for debugging)
                  * @default true
                  */
-                fileParallelism: true,
 
                 /**
                  * Browser instances - define multiple browsers and configurations
